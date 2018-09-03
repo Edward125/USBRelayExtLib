@@ -1,0 +1,19 @@
+一，开发库在Vistual Studio中的使用方法
+1. 新建一个C++工程
+2. 在生成的stdfax.h头文件中导入dll库文件
+   #include "usb_relay_device.h"
+   #pragma comment(lib, "usb_relay_device.lib")
+3. 拷贝usb_relay_device.dll到你的应用程序生成目录中
+
+二、开发库函数使用方法
+1. 调用usb_relay_init()函数初始化
+2. 调用usb_relay_device_enumerate()查找插入到电脑中的所有USB免驱继电器模块
+3. 调用usb_relay_device_open()打开你需要操作的设备; 调用usb_relay_device_open_with_serial_number() 打开指定序列号的设备
+4. 其他操作：
+调用usb_relay_device_open_one_relay_channel()可以打开某路继电器
+调用usb_relay_device_open_all_relay_channel()可以打开所有继电器
+调用usb_relay_device_close_one_relay_channel()可以关闭某路继电器
+调用usb_relay_device_close_all_relay_channel()可以关闭所有继电器
+5. 调用usb_relay_device_free_enumerate 释放内存
+6. 调用usb_relay_exit 释放内存
+

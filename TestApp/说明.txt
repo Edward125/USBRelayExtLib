@@ -1,0 +1,24 @@
+一.命令测试工具 CommandApp_USBRelay.exe 使用说明：
+
+命令格式：CommandApp_USBRelay [设备序列号]  [操作类型]  [继电器开关]
+
+[参数说明]
+设备序列号：每个设备有一个唯一的序列号，可以通过GuiApp_Chinese.exe或者GuiApp_English.exe程序获取
+操作类型：  open--打开继电器， close-- 关闭继电器
+继电器开关：01表示第一个继电器，02表示第二个继电器，... 255表示所有继电器动作
+
+例如：
+1. 打开序列号afEd5设备的第一路继电器
+CommandApp_USBRelay  afEd5 open 01
+2. 打开序列号afEd5设备的所有继电器
+CommandApp_USBRelay  afEd5 open 255
+3. 关闭序列号afEd5设备的第一路继电器
+CommandApp_USBRelay  afEd5 close 01
+4. 关闭序列号afEd5设备的所有继电器
+CommandApp_USBRelay  afEd5 close 255
+
+命令行工具执行完命令后，如果没有错误，则返回0， 否则返回 1
+调用者可以根据该值判断执行是否正确
+
+二、GuiApp_Chinese.exe或者GuiApp_English.exe 是带界面的测试程序
+先使用“查找设备”按钮查询设备，然后从下拉列表框选择你需要操作的设备，然后点击“打开设备”，即可进行操作

@@ -1,0 +1,4 @@
+1. TestApp 目录为测试程序
+2. TestAppCode目录为测试程序代码
+3. usb_relay_dll目录为开发者需要使用的动态链接库(dll)和头文件(.h)
+4. xcgui是TestAppCode中带界面的测试测序使用的界面开发库
